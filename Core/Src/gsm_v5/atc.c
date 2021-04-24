@@ -1,7 +1,9 @@
-#include "atc.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
+
+#include "atc.h"
+#include "stm32_f1xx_ll_usart.h"
 
 #if (_ATC_DEBUG == 1)
 #define	atc_printf(...)     printf(__VA_ARGS__)
@@ -38,7 +40,7 @@ void atc_init(atc_t *atc, const char *name, USART_TypeDef *USARTx, void *found)
   atc->found = found;
   LL_USART_EnableIT_RXNE(atc->usart);
   atc->inited = true;
-  atc_printf("\r\n[%s] inited.\r\n", atc->name);
+  atc_printf("\r\n[%s] initialized.\r\n", atc->name);
 }
 //####################################################################################################
 bool atc_lock(atc_t *atc, uint32_t wait_ms)

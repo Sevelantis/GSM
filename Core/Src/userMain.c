@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
+#include "gsm_v5/gsm.h"
 
 void init_TIM_IT(TIM_HandleTypeDef *timer);
 void w8(int delay);
@@ -9,7 +10,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 
 extern TIM_HandleTypeDef htim4;		// timer
 extern UART_HandleTypeDef huart2;	// uart2
-extern UART_HandleTypeDef huart3;	// uart2
+extern UART_HandleTypeDef huart3;	// uart3
 
 unsigned counter_IT = 0;
 uint16_t message_counter = 0;
@@ -18,10 +19,16 @@ char *message_welcome = "\n\n\r_____WELCOME_____\n\n\r";
 void userMain()
 {
 	// init
-	init_TIM_IT(&htim4);
+//	init_TIM_IT(&htim4);
 
-	// welcome message
-	HAL_UART_Transmit_IT(&huart3, message_welcome, (uint8_t)strlen(message_welcome));
+//	gsm_init();
+//	gsm_power(1); // true
+	gsm_waitForRegister(30);
+//	gsm_msg_send("+48796075202", "TO JEST NAPAD");
+	while (1)
+	{
+//		gsm_loop();
+	}
 }
 
 void init_TIM_IT(TIM_HandleTypeDef *timer)
@@ -36,9 +43,9 @@ void w8(int delay)
 
 uint16_t msg_len = 80;
 
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)	// 10Hz
 {
-
 	if(counter_IT % 1 == 0 && htim->Instance == TIM4)		// 10Hz
 	{
 		uint8_t *msg = (uint8_t*)calloc(msg_len, sizeof(uint8_t));

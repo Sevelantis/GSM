@@ -23,7 +23,9 @@ Core/Src/userMain.o: ../Core/Src/userMain.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ ../Core/Src/gsm_v5/gsm.h ../Core/Src/gsm_v5/gsmConfig.h \
+ ../Core/Src/gsm_v5/atcConfig.h ../Core/Src/gsm_v5/atc.h
 
 ../Core/Inc/main.h:
 
@@ -76,3 +78,11 @@ Core/Src/userMain.o: ../Core/Src/userMain.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+
+../Core/Src/gsm_v5/gsm.h:
+
+../Core/Src/gsm_v5/gsmConfig.h:
+
+../Core/Src/gsm_v5/atcConfig.h:
+
+../Core/Src/gsm_v5/atc.h:

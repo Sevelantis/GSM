@@ -1,6 +1,15 @@
 #include "gsm.h"
+#include <string.h>
 
 gsm_t gsm;
+extern UART_HandleTypeDef huart3;	// uart3
+
+
+//####################UART PRINTF############
+void gsm_printf(const char *data, ...)
+{
+	HAL_UART_Transmit_IT(&huart3, data, strlen(data));
+}
 
 //###############################################################################################################
 void gsm_found(char *found_str)
@@ -783,11 +792,11 @@ uint8_t gsm_getSignalQuality_0_to_100(void)
   return gsm.signal;
 }
 //###############################################################################################################
-bool gsm_waitForRegister(uint8_t waitSecond)
+bool gsm_waitForRegister(uint8_t seconds)
 {
-  gsm_printf("[GSM] waitForRegister(%d second) begin\r\n", waitSecond);
+  gsm_printf("[GSM] waitForRegister(%d second) begin\r\n", seconds);
   uint32_t startTime = HAL_GetTick();
-  while (HAL_GetTick() - startTime < (waitSecond * 1000))
+  while (HAL_GetTick() - startTime < (seconds * 1000))
   {
     gsm_delay(100);
     gsm_loop();

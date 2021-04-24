@@ -32,11 +32,14 @@
 #include <string.h>
 #include <stdio.h>
 
-#if (_GSM_DEBUG == 1)
-#define gsm_printf(...)     printf(__VA_ARGS__)
-#else
-#define gsm_printf(...)     {};
-#endif
+// added line for printf
+void gsm_printf(const char *data, ...);
+
+//#if (_GSM_DEBUG == 1)
+////#define gsm_printf(...)     printf(__VA_)
+//#else
+//#define gsm_printf(...)     {};
+//#endif
 
 typedef enum
 {
