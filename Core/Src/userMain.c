@@ -9,6 +9,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim);
 
 extern TIM_HandleTypeDef htim4;		// timer
 extern UART_HandleTypeDef huart2;	// uart2
+extern UART_HandleTypeDef huart3;	// uart2
 
 unsigned counter_IT = 0;
 uint16_t message_counter = 0;
@@ -20,7 +21,7 @@ void userMain()
 	init_TIM_IT(&htim4);
 
 	// welcome message
-	HAL_UART_Transmit_IT(&huart2, message_welcome, (uint8_t)strlen(message_welcome));
+	HAL_UART_Transmit_IT(&huart3, message_welcome, (uint8_t)strlen(message_welcome));
 }
 
 void init_TIM_IT(TIM_HandleTypeDef *timer)
@@ -44,7 +45,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)	// 10Hz
 
 		// create & transmit message
 		msg_len = sprintf(msg, "Ty piszesz program, a Lewandowski strzelil juz %d goli.\r\n", message_counter);
-		HAL_UART_Transmit_IT(&huart2, msg, msg_len);
+		HAL_UART_Transmit_IT(&huart3, msg, msg_len);
 
 		free(msg);
 

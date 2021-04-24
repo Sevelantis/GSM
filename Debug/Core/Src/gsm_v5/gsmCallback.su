@@ -1,0 +1,11 @@
+gsmCallback.c:5:6:gsm_callback_simcardReady	8	static
+gsmCallback.c:10:6:gsm_callback_simcardPinRequest	8	static
+gsmCallback.c:15:6:gsm_callback_simcardPukRequest	8	static
+gsmCallback.c:20:6:gsm_callback_simcardNotInserted	8	static
+gsmCallback.c:25:6:gsm_callback_networkRegister	8	static
+gsmCallback.c:30:6:gsm_callback_networkUnregister	8	static
+gsmCallback.c:54:6:gsm_callback_newMsg	24	static
+gsmCallback.c:62:6:gsm_callback_gprsConnected	8	static
+gsmCallback.c:67:6:gsm_callback_gprsDisconnected	8	static
+gsmCallback.c:72:6:gsm_callback_mqttMessage	16	static
+gsmCallback.c:77:6:gsm_callback_mqttDisconnect	8	static

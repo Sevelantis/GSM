@@ -1,0 +1,12 @@
+msg.c:5:6:gsm_msg_updateStorage	96	static
+msg.c:43:10:gsm_msg_getStorageUsed	8	static
+msg.c:49:10:gsm_msg_getStorageTotal	8	static
+msg.c:55:10:gsm_msg_getStorageFree	8	static
+msg.c:61:6:gsm_msg_textMode	32	static
+msg.c:102:6:gsm_msg_isTextMode	40	static
+msg.c:133:6:gsm_msg_deleteAll	24	static
+msg.c:166:6:gsm_msg_delete	64	static
+msg.c:186:6:gsm_msg_send	64	static
+msg.c:230:6:gsm_msg_selectStorage	96	static
+msg.c:273:6:gsm_msg_selectCharacterSet	96	static
+msg.c:321:6:gsm_msg_read	88	static
