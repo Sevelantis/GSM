@@ -5,6 +5,8 @@
 #include "atc.h"
 #include "stm32_f1xx_ll_usart.h"
 
+__STATIC_INLINE uint32_t LL_USART_IsActiveFlag_IDLE(USART_TypeDef *USARTx);
+
 #if (_ATC_DEBUG == 1)
 #define	atc_printf(...)     printf(__VA_ARGS__)
 #else
